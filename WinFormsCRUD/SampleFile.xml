@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<states>
+  <state>
+    <id>1</id>
+    <name>Alaska</name>
+    <governor>Mike Dunleavy</governor>
+    <area>1717856</area>
+    <minimumwage>10.34</minimumwage>
+    <timezone>AT</timezone>
+  </state>
+  <state>
+    <id>2</id>
+    <name>Arizona</name>
+    <governor>Doug Ducey</governor>
+    <area>295234</area>
+    <minimumwage>12.15</minimumwage>
+    <timezone>MT</timezone>
+  </state>
+  <state>
+    <id>3</id>
+    <name>California</name>
+    <governor>Gavin Newsom</governor>
+    <area>423970</area>
+    <minimumwage>14.00</minimumwage>
+    <timezone>PT</timezone>
+  </state>
+  <state>
+    <id>4</id>
+    <name>Delaware</name>
+    <governor>John Carney</governor>
+    <area>5130</area>
+    <minimumwage>10.25</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>5</id>
+    <name>Florida</name>
+    <governor>Ron DeSantis</governor>
+    <area>170312</area>
+    <minimumwage>10.00</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>6</id>
+    <name>Georgia</name>
+    <governor>Brian Kemp</governor>
+    <area>153909</area>
+    <minimumwage>7.25</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>7</id>
+    <name>Idaho</name>
+    <governor>Brad Little</governor>
+    <area>216443</area>
+    <minimumwage>7.25</minimumwage>
+    <timezone>MT</timezone>
+  </state>
+  <state>
+    <id>8</id>
+    <name>Illinois</name>
+    <governor>J.B.Pritzker</governor>
+    <area>149997</area>
+    <minimumwage>11.00</minimumwage>
+    <timezone>CT</timezone>
+  </state>
+  <state>
+    <id>9</id>
+    <name>Maine</name>
+    <governor>Janet Mills</governor>
+    <area>91646</area>
+    <minimumwage>12.15</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>10</id>
+    <name>Michigan</name>
+    <governor>Gretchen Whitmer</governor>
+    <area>250493</area>
+    <minimumwage>9.65</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>11</id>
+    <name>Montana</name>
+    <governor>Greg Gianforte</governor>
+    <area>380800</area>
+    <minimumwage>8.75</minimumwage>
+    <timezone>MT</timezone>
+  </state>
+  <state>
+    <id>12</id>
+    <name>New York</name>
+    <governor>Kathy Hochul</governor>
+    <area>141297</area>
+    <minimumwage>12.50</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>13</id>
+    <name>North Dakota</name>
+    <governor>Doug Burgum</governor>
+    <area>183123</area>
+    <minimumwage>7.25</minimumwage>
+    <timezone>CT</timezone>
+  </state>
+  <state>
+    <id>14</id>
+    <name>North Carolina</name>
+    <governor>Roy Cooper</governor>
+    <area>139390</area>
+    <minimumwage>7.25</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>15</id>
+    <name>Ohio</name>
+    <governor>Mike DeWine</governor>
+    <area>116096</area>
+    <minimumwage>8.80</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>16</id>
+    <name>Oregon</name>
+    <governor>Kate Brown</governor>
+    <area>254806</area>
+    <minimumwage>12.75</minimumwage>
+    <timezone>PT</timezone>
+  </state>
+  <state>
+    <id>17</id>
+    <name>Pennsylvania</name>
+    <governor>Tom Wolf</governor>
+    <area>119283</area>
+    <minimumwage>7.25</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>18</id>
+    <name>Rhode Island</name>
+    <governor>Daniel McKee</governor>
+    <area>3144</area>
+    <minimumwage>11.50</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>19</id>
+    <name>South Dakota</name>
+    <governor>Kristi Noem</governor>
+    <area>199729</area>
+    <minimumwage>9.45</minimumwage>
+    <timezone>CT</timezone>
+  </state>
+  <state>
+    <id>20</id>
+    <name>Texas</name>
+    <governor>Greg Abbott</governor>
+    <area>695662</area>
+    <minimumwage>7.25</minimumwage>
+    <timezone>CT</timezone>
+  </state>
+  <state>
+    <id>21</id>
+    <name>Vermont</name>
+    <governor>Phil Scott</governor>
+    <area>24923</area>
+    <minimumwage>11.75</minimumwage>
+    <timezone>ET</timezone>
+  </state>
+  <state>
+    <id>22</id>
+    <name>Wyoming</name>
+    <governor>Mark Gordon</governor>
+    <area>253600</area>
+    <minimumwage>7.25</minimumwage>
+    <timezone>MT</timezone>
+  </state>
+</states>
