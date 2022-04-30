@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,15 +14,17 @@ namespace CRUDXmlFile
 {
     public partial class Form : System.Windows.Forms.Form
     {
-        private XDocument xmldoc;
+        private XDocument xmlDocument;
+        private string filePath;
         public Form()
         {
             InitializeComponent();
-            btn_add.Enabled = false;
-            btn_delete.Enabled = false;
-            btn_save.Enabled = false;
-            btn_update.Enabled = false;
+            AddButton.Enabled = false;
+            DeleteButton.Enabled = false;
+            SaveButton.Enabled = false;
+            UpdateButton.Enabled = false;
             FileTextBox.Enabled = false;
+            dataGridView1.Enabled = false;
         }
 
         private void FileDialog(string filter, string title, TextBox textbox)
@@ -31,8 +34,8 @@ namespace CRUDXmlFile
             ofd.Filter = filter;
             ofd.Title = title;
             ofd.ShowDialog(this);
-
-            textbox.Text = ofd.FileName;
+            filePath = ofd.FileName;
+            textbox.Text = Path.GetFileName(ofd.FileName);
         }
 
         private void ChooseXMLButton_Click(object sender, EventArgs e)
@@ -41,11 +44,10 @@ namespace CRUDXmlFile
             try
             {
                 LoadData();
-                btn_add.Enabled = true;
-                btn_delete.Enabled = true;
-                btn_save.Enabled = true;
-                btn_update.Enabled = true;
-                ChooseXMLButton.Enabled = false;
+                AddButton.Enabled = true;
+                DeleteButton.Enabled = true;
+                SaveButton.Enabled = true;
+                UpdateButton.Enabled = true;
                 dataGridView1.Enabled = true;
             }
             catch { }
@@ -53,8 +55,8 @@ namespace CRUDXmlFile
 
         public void LoadData()
         {
-            xmldoc = XDocument.Load(FileTextBox.Text);
-            var data = xmldoc.Descendants("state").Select(p => new
+            xmlDocument = XDocument.Load(filePath);
+            var data = xmlDocument.Descendants("state").Select(p => new
             {
                 id = p.Element("id").Value,
                 name = p.Element("name").Value,
@@ -80,7 +82,7 @@ namespace CRUDXmlFile
             dataGridView1.DataSource = data;
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private void ClickAddButton(object sender, EventArgs e)
         {
             foreach (var item in group_info.Controls)
             {
@@ -92,7 +94,7 @@ namespace CRUDXmlFile
             IdTextBox.Focus();
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void ClickSaveButton(object sender, EventArgs e)
         {
             XElement emp = 
                 new XElement("state",
@@ -102,15 +104,17 @@ namespace CRUDXmlFile
                 new XElement("area", AreaTextBox.Text),
                 new XElement("minimumwage", MinimumWageTextBox.Text),
                 new XElement("timezone", TimeZoneTextBox.Text));
-            xmldoc.Root.Add(emp);
-            xmldoc.Save(FileTextBox.Text);
+
+            xmlDocument.Root.Add(emp);
+            xmlDocument.Save(filePath);
             LoadData();
-            btn_add_Click(null, null);
+            ClickAddButton(null, null);
         }
 
-        private void btn_update_Click(object sender, EventArgs e)
+        private void ClickUpdateButton(object sender, EventArgs e)
         {
-            XElement emp = xmldoc.Descendants("state").FirstOrDefault(p => p.Element("id").Value == IdTextBox.Text);
+            XElement emp = xmlDocument.Descendants("state").FirstOrDefault(p => p.Element("id").Value == IdTextBox.Text);
+
             if (emp != null)
             {
                 emp.Element("name").Value = NameTextBox.Text;
@@ -118,21 +122,22 @@ namespace CRUDXmlFile
                 emp.Element("area").Value = AreaTextBox.Text;
                 emp.Element("minimumwage").Value = MinimumWageTextBox.Text;
                 emp.Element("timezone").Value = TimeZoneTextBox.Text; ;          
-                xmldoc.Save(FileTextBox.Text);
+                xmlDocument.Save(filePath);
                 LoadData();
-                btn_add_Click(null, null);
+                ClickAddButton(null, null);
             }
         }
 
-        private void btn_delete_Click(object sender, EventArgs e)
+        private void ClickDeleteButton(object sender, EventArgs e)
         {
-            XElement emp = xmldoc.Descendants("state").FirstOrDefault(p => p.Element("id").Value == IdTextBox.Text);
+            XElement emp = xmlDocument.Descendants("state").FirstOrDefault(p => p.Element("id").Value == IdTextBox.Text);
+
             if (emp != null)
             {
                 emp.Remove();
-                xmldoc.Save(FileTextBox.Text);
+                xmlDocument.Save(filePath);
                 LoadData();
-                btn_add_Click(null, null);
+                ClickAddButton(null, null);
             }
         }
     }

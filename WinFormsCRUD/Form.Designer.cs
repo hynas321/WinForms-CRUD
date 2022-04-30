@@ -46,16 +46,16 @@ namespace CRUDXmlFile
             this.label5 = new System.Windows.Forms.Label();
             this.MinimumWageTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_add = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.group_info = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TimeZoneTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ChooseXMLButton = new System.Windows.Forms.Button();
             this.FileTextBox = new System.Windows.Forms.TextBox();
-            this.btn_update = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.group_info.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +83,7 @@ namespace CRUDXmlFile
             this.ID.MaxInputLength = 2;
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.Width = 50;
+            this.ID.Width = 40;
             // 
             // Name
             // 
@@ -92,7 +92,7 @@ namespace CRUDXmlFile
             this.Name.MaxInputLength = 25;
             this.Name.MinimumWidth = 6;
             this.Name.Name = "Name";
-            this.Name.Width = 150;
+            this.Name.Width = 140;
             // 
             // Governor
             // 
@@ -101,7 +101,7 @@ namespace CRUDXmlFile
             this.Governor.MaxInputLength = 30;
             this.Governor.MinimumWidth = 6;
             this.Governor.Name = "Governor";
-            this.Governor.Width = 150;
+            this.Governor.Width = 140;
             // 
             // Area
             // 
@@ -110,7 +110,6 @@ namespace CRUDXmlFile
             this.Area.MaxInputLength = 10;
             this.Area.MinimumWidth = 6;
             this.Area.Name = "Area";
-            this.Area.Width = 125;
             // 
             // MinimumWage
             // 
@@ -119,7 +118,7 @@ namespace CRUDXmlFile
             this.MinimumWage.MaxInputLength = 6;
             this.MinimumWage.MinimumWidth = 6;
             this.MinimumWage.Name = "MinimumWage";
-            this.MinimumWage.Width = 125;
+            this.MinimumWage.Width = 90;
             // 
             // TimeZone
             // 
@@ -128,7 +127,7 @@ namespace CRUDXmlFile
             this.TimeZone.MaxInputLength = 2;
             this.TimeZone.MinimumWidth = 6;
             this.TimeZone.Name = "TimeZone";
-            this.TimeZone.Width = 80;
+            this.TimeZone.Width = 90;
             // 
             // label2
             // 
@@ -222,39 +221,43 @@ namespace CRUDXmlFile
             // 
             // btn_add
             // 
-            this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btn_add.Location = new System.Drawing.Point(136, 245);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(91, 47);
-            this.btn_add.TabIndex = 12;
-            this.btn_add.Text = "Clear GroupBox";
-            this.btn_add.UseVisualStyleBackColor = false;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            this.AddButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.AddButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddButton.Location = new System.Drawing.Point(119, 245);
+            this.AddButton.Name = "btn_add";
+            this.AddButton.Size = new System.Drawing.Size(91, 47);
+            this.AddButton.TabIndex = 12;
+            this.AddButton.Text = "Clear GroupBox";
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.ClickAddButton);
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btn_save.Location = new System.Drawing.Point(14, 245);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(99, 47);
-            this.btn_save.TabIndex = 13;
-            this.btn_save.Text = "Add set from GroupBox";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.SaveButton.Location = new System.Drawing.Point(14, 245);
+            this.SaveButton.Name = "btn_save";
+            this.SaveButton.Size = new System.Drawing.Size(99, 47);
+            this.SaveButton.TabIndex = 13;
+            this.SaveButton.Text = "Add set from GroupBox";
+            this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.ClickSaveButton);
             // 
             // btn_delete
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btn_delete.Location = new System.Drawing.Point(362, 245);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(91, 47);
-            this.btn_delete.TabIndex = 15;
-            this.btn_delete.Text = "Delete Data Set";
-            this.btn_delete.UseVisualStyleBackColor = false;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            this.DeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.DeleteButton.Location = new System.Drawing.Point(313, 245);
+            this.DeleteButton.Name = "btn_delete";
+            this.DeleteButton.Size = new System.Drawing.Size(91, 47);
+            this.DeleteButton.TabIndex = 15;
+            this.DeleteButton.Text = "Delete Data Set";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.ClickDeleteButton);
             // 
             // group_info
             // 
@@ -310,10 +313,11 @@ namespace CRUDXmlFile
             // 
             // ChooseXMLButton
             // 
-            this.ChooseXMLButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ChooseXMLButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.ChooseXMLButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChooseXMLButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.ChooseXMLButton.Location = new System.Drawing.Point(370, 80);
-            this.ChooseXMLButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChooseXMLButton.Margin = new System.Windows.Forms.Padding(2);
             this.ChooseXMLButton.Name = "ChooseXMLButton";
             this.ChooseXMLButton.Size = new System.Drawing.Size(74, 41);
             this.ChooseXMLButton.TabIndex = 18;
@@ -331,33 +335,33 @@ namespace CRUDXmlFile
             // 
             // btn_update
             // 
-            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btn_update.Location = new System.Drawing.Point(247, 245);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(91, 47);
-            this.btn_update.TabIndex = 20;
-            this.btn_update.Text = "Saves Changes";
-            this.btn_update.UseVisualStyleBackColor = false;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.UpdateButton.Location = new System.Drawing.Point(216, 245);
+            this.UpdateButton.Name = "btn_update";
+            this.UpdateButton.Size = new System.Drawing.Size(91, 47);
+            this.UpdateButton.TabIndex = 20;
+            this.UpdateButton.Text = "Saves Changes";
+            this.UpdateButton.UseVisualStyleBackColor = false;
+            this.UpdateButton.Click += new System.EventHandler(this.ClickUpdateButton);
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 700);
-            this.Controls.Add(this.btn_update);
+            this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.FileTextBox);
             this.Controls.Add(this.ChooseXMLButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.group_info);
-            this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.btn_add);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.dataGridView1);
             this.MaximumSize = new System.Drawing.Size(679, 739);
             this.MinimumSize = new System.Drawing.Size(679, 739);
-            this.Name = null;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XML Application";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -381,22 +385,22 @@ namespace CRUDXmlFile
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox MinimumWageTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.GroupBox group_info;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TimeZoneTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button ChooseXMLButton;
         private System.Windows.Forms.TextBox FileTextBox;
+        private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Governor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Area;
         private System.Windows.Forms.DataGridViewTextBoxColumn MinimumWage;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeZone;
-        private System.Windows.Forms.Button btn_update;
     }
 }
 
