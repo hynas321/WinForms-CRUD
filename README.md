@@ -9,3 +9,6 @@ There are 4 types of operation:
 
 Namespace `System.Xml.Linq` is used to run all operations.\
 Any XML file can be chosen from a disc, however it needs to have the same structure as `SampleFile.xml`.
+
+## Possible problem
+In case of a different structure of an XML file than allowed, XML content might not be loaded.
